@@ -36,8 +36,8 @@
     $nilai_uts = $_POST['uts'];
     $nilai_uas = $_POST['uas'];
     $nilai_tugas = $_POST['tugas'];
-    $nilai_akhir = ($nilai_tugas + $nilai_uas + $nilai_uts) / 3;
     $ns5 = ['id'=>5,'nim'=>$nim_siswa,'matkul'=>$mata_kuliah,'uts'=>$nilai_uts,'uas'=>$nilai_uas,'tugas'=>$nilai_tugas];
+    
     $ar_nilai = [$ns1, $ns2 , $ns3, $ns4, $ns5];
     ?>
     <br />
@@ -66,7 +66,7 @@
     echo '<td>'.$ns['uts'].'</td>';
     echo '<td>'.$ns['uas'].'</td>';
     echo '<td>'.$ns['tugas'].'</td>';
-    $nilai_akhir = ($ns['uts'] + $ns['uas']+$ns['tugas'])/3;
+    $nilai_akhir = (30 * $ns['uts'] / 100) + (35 * $ns['uas'] / 100) + (35 * $ns['tugas'] / 100);
     echo '<td>'.number_format($nilai_akhir,2,',','.').'</td>';
     echo '<tr/>';
     $nomor++;
